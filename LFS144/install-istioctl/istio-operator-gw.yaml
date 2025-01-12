@@ -1,0 +1,22 @@
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+metadata:
+  namespace: istio-system
+  name: internal-gateway-only
+spec:
+  profile: empty
+  revision: 1-8-0
+  meshConfig:
+    accessLogFile: /dev/stdout
+    enableTracing: true
+  components:
+    ingressGateways:
+      - name: christop-ingressgateway
+        enabled: true
+        label:
+          my: linse
+    egressGateways:
+      - name: christop-egressgateway
+        enabled: true
+        label:
+          my: linse

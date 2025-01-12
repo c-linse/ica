@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: fleetman-staff-service
+  namespace: default
+spec:
+  hosts:
+    - fleetman-staff-service.default.svc.cluster.local
+  http:
+    - route:
+        - destination:
+            host: fleetman-staff-service.default.svc.cluster.local
+            subset: safe
+          weight: 100
+        - destination:
+            host: fleetman-staff-service.default.svc.cluster.local
+            subset: risky
+          weight: 0

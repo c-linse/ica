@@ -1,0 +1,16 @@
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+metadata:
+  namespace: istio-system
+  name: internal-base
+spec:
+  profile: empty
+  revision: 1-8-0
+  meshConfig:
+    accessLogFile: /dev/stdout
+    enableTracing: true
+  components:
+    base:
+      enabled: true
+    pilot:
+      enabled: true
