@@ -23,7 +23,7 @@ spec:
             - containerPort: 8080
           env:
             - name: CUSTOMER_SERVICE_URL
-              value: 'ht‌tp://customers.default.svc.cluster.local'
+              value: 'http://customers.default.svc.cluster.local'
 ---
 kind: Service
 apiVersion: v1
