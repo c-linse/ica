@@ -18,4 +18,4 @@ kubectl apply -f 3-kiali-secret.yaml
 
 kubectl wait --for=condition=ready pod -n istio-system --all --timeout=300s
 
-kubectl apply -f 3-kiali-secret.yaml
+kubectl apply -f 4-application-full-stack.yaml

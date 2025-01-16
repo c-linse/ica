@@ -21,6 +21,7 @@ kubectl wait --for=condition=ready pod -n istio-system --all --timeout=300s
 
 kubectl apply -f 5-application-no-istio.yaml
 
+kubectl apply -f 6-istio-rules.yaml
 sleep 5
 
 kubectl wait --for=condition=ready pod -n default --all --timeout=300s
